@@ -7,6 +7,6 @@
 <title>Main Page</title>
 </head>
 <body>
-	메인페이지!!
+	로그인페이지!!<br>
 </body>
 </html>

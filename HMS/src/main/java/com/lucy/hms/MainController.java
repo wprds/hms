@@ -1,5 +1,7 @@
 package com.lucy.hms;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.log4j.Logger;
 import org.apache.log4j.Priority;
 import org.springframework.stereotype.Controller;
@@ -19,13 +21,32 @@ public class MainController {
 	private static final Logger logger = Logger.getLogger(MainController.class);
 	
 	
-	@RequestMapping(value="/", method={RequestMethod.POST, RequestMethod.GET})
+	@RequestMapping(value="/")
 	public String main(Model model){
 		logger.info("=== 메인페이지 시작!! ===");
 		
 		logger.info("=== 메인페이지 끝!! ===");
 		
-		return "Main";
+		return "/login/login";
+//		return "Main";
 	}
 	
+	/**
+	 * 로그인 처리
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="/login", method={RequestMethod.POST})
+	public String login(HttpServletRequest request, Model model){
+		
+		String sResult = "Main";
+		
+		String sID = request.getAttribute("id").toString();
+		String sPW = request.getAttribute("password").toString();
+		
+		logger.info("id : " + sID);
+		logger.info("pw : " + sPW);
+		
+		return sResult;
+	}
 }
