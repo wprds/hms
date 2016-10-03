@@ -36,13 +36,13 @@ public class MainController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value="/login", method={RequestMethod.POST})
+	@RequestMapping(value="/login")
 	public String login(HttpServletRequest request, Model model){
 		
 		String sResult = "Main";
 		
-		String sID = request.getAttribute("id").toString();
-		String sPW = request.getAttribute("password").toString();
+		String sID = request.getParameter("id");
+		String sPW = request.getParameter("password");
 		
 		logger.info("id : " + sID);
 		logger.info("pw : " + sPW);

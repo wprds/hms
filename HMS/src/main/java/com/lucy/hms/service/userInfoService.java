@@ -2,10 +2,10 @@ package com.lucy.hms.service;
 
 import java.util.List;
 
-import com.lucy.hms.vo.testVO;
+import com.lucy.hms.vo.userInfoVO;
 
-public interface testService {
+public interface userInfoService {
 
-		public List<testVO> getUserInfo();
+		public List<userInfoVO> getUserInfo();
 	
 }

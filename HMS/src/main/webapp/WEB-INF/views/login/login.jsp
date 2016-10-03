@@ -9,7 +9,7 @@
 <title>Login Page</title>
 
 <script type="text/javascript">
-	function checkLogin(){
+	function checkLogin(mform){
 		if($.trim($("#id").val()) == ""){
 			alert("아이디를 입력해 주세요.");
 			$("#id").focus();
@@ -20,6 +20,8 @@
 			$("#password").focus();
 			return;
 		}
+		
+		document.getElementById('frmLogin').submit();
 	}
 </script>
 
@@ -29,13 +31,13 @@
 	<table>
 		<tr>
 			<td>
-				<input type="text" id="id" name="id" /><br>
-				<input type="password" id="password" name="password" />
+				<input type="text" id="id" name="id" value="" /><br>
+				<input type="password" id="password" name="password" value=""/>
 			</td>
 		</tr>
 		<tr>
 			<td align="right">
-				<input type="button" id="submit" name="submit" onclick="javascript:checkLogin();" value="로그인" />	
+				<input type="button" id="btnLogin" name="btnLogin" onclick="javascript:checkLogin();" value="로그인" />	
 			</td>
 		</tr>
 	</table>
